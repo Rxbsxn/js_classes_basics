@@ -14,5 +14,15 @@ const users = [
   },
 ]
 
-const findUserById = () => {}
+const findUserById = (number) => {
+  if(number === undefined){
+    return 'Parameter missing'
+  }
+  if(typeof number !== 'number' && number !== undefined) {
+    return 'Parameter must be a number'
+  }
+
+  const user = users.find(user => user.id === number)
+  return user
+}
 module.exports = findUserById;
